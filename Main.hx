@@ -23,8 +23,27 @@ class AABB {
     public static function is_colliding(main_body: Body, other_body: Body, side_by_side = true) {
         var p1x = Math.max(main_body.x, other_body.x);
         var p1y = Math.max(main_body.y, other_body.y);
-        var p2x = Math.max(main_body.x + main_body.width, other_body.x + other_body.width);
-        var p2y = Math.max(main_body.y + main_body.height, other_body.y + other_body.height);
+        var p2x = Math.min(main_body.x + main_body.width, other_body.x + other_body.width);
+        var p2y = Math.min(main_body.y + main_body.height, other_body.y + other_body.height);
+
+        // trace("======================================================================================");
+        // trace("main_body: x, y, height, width");
+        // trace(main_body.x);
+        // trace(main_body.y);
+        // trace(main_body.height);
+        // trace(main_body.width);
+        // trace("other_body: x, y, height, width");
+        // trace(other_body.x);
+        // trace(other_body.y);
+        // trace(other_body.height);
+        // trace(other_body.width);
+        // trace("p1x - p1y");
+        // trace(p1x);
+        // trace(p1y);
+        // trace("p2x - p2y");
+        // trace(p2x);
+        // trace(p2y);
+        // trace("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
         if (side_by_side && p2x - p1x >= 0 && p2y - p1y >= 0) {
             return true;
@@ -50,7 +69,7 @@ class AABB {
         } else {
             return Bottom;
         }
-        
+
     }
 }
 
@@ -93,7 +112,7 @@ class PhysicalObject {
         this.bmp.y = this.y;
     }
 }
-    
+
 class Main extends hxd.App {
     var player : PhysicalObject;
     var ground : PhysicalObject;
