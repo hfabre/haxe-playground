@@ -1,12 +1,29 @@
+// {
+// 	"version": "0.2.0",
+// 	"configurations": [
+// 		{
+// 			"type": "firefox",
+// 			"request": "launch",
+// 			"name": "Launch firefox against localhost",
+// 			"url": "file://${workspaceFolder}/index.html",
+// 			"webRoot": "${workspaceFolder}",
+// 			"preLaunchTask": {
+// 				"type" : "haxe",
+// 				"args" : "active configuration"
+// 			}
+// 		}
+// 	]
+// }
+
 {
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "firefox",
+			"name": "HashLink",
 			"request": "launch",
-			"name": "Launch firefox against localhost",
-			"url": "file://${workspaceFolder}/index.html",
-			"webRoot": "${workspaceFolder}",
+			"type": "hl",
+			"hxml": "compile.hxml",
+			"cwd": "${workspaceRoot}",
 			"preLaunchTask": {
 				"type" : "haxe",
 				"args" : "active configuration"
